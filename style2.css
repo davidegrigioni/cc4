@@ -1,0 +1,94 @@
+html {
+    font-size: 16px;
+}
+
+#image-container {
+    border: red solid;
+}
+
+#footer-container {
+    position: relative;
+    width: 100%;
+}
+
+#fire-container {
+    position: absolute;
+    width: inherit;
+    bottom: 0;
+    height: 50px;
+    
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+
+    background-size: auto 100%;
+    background-image: url("fire01.svg");
+    background-repeat: repeat-x;
+    background-size: 35px 50px;
+
+    animation: fire-animation 1s linear infinite;
+}
+
+@keyframes fire-animation {
+    0% {
+        background-image: url("fire01.svg");
+    }
+    50% {
+        background-image: url("fire02.svg");
+    }
+    100% {
+        background-image: url("fire01.svg");
+    }
+}
+
+#mask-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: linear-gradient(transparent, transparent 50%, #ffffff 70%, #ffffff);
+}
+
+#text-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#text-scroller {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#text-content {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+
+    /*
+
+    https://www.w3schools.com/howto/howto_css_responsive_text.asp
+    https://blog.hubspot.com/website/responsive-text
+
+    */
+
+    font-size: 1vw;
+
+    -moz-animation: text-animation 10s linear infinite;
+    -webkit-animation: text-animation 10s linear infinite;
+    animation: text-animation 10s linear infinite;
+}
+  
+@keyframes text-animation {
+    from {
+        -moz-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+    to {
+        -moz-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+}
